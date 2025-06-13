@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  
+  <!-- Métadonnées de base -->
+  <title>Af-MeD Prières - Communauté de Foi</title>
+  <meta name="description" content="Écoutez les prières publiques et podcasts Af-MeD. Priez, partagez, et découvrez les intentions de la communauté." />
+  <meta name="keywords" content="prières, église, communauté, foi, podcasts, témoignages, bible" />
+  <meta name="author" content="Af-MeD" />
+  
+  <!-- Viewport et responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover" />
+  
+  <!-- PWA Métadonnées -->
+  <meta name="application-name" content="Af-MeD Prières" />
+  <meta name="apple-mobile-web-app-title" content="Af-MeD" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  
+  <!-- Couleurs et thème -->
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="msapplication-TileColor" content="#1a237e" />
+  <meta name="msapplication-navbutton-color" content="#1a237e" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <!-- Icônes -->
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/adaptive-icon.png" />
+  
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- Open Graph pour partage social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Af-MeD Prières - Communauté de Foi" />
+  <meta property="og:description" content="Écoutez les prières publiques et podcasts Af-MeD. Priez, partagez, et découvrez les intentions de la communauté." />
+  <meta property="og:image" content="/church-header.png" />
+  <meta property="og:url" content="https://afmed-prieres.vercel.app" />
+  <meta property="og:site_name" content="Af-MeD Prières" />
+  <meta property="og:locale" content="fr_FR" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Af-MeD Prières" />
+  <meta name="twitter:description" content="Communauté de foi - Prières, Podcasts, Témoignages" />
+  <meta name="twitter:image" content="/church-header.png" />
+  
+  <!-- Préchargement des ressources critiques -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://firebaseapp.com" />
+  <link rel="preconnect" href="https://cloudinary.com" />
+  
+  <!-- Styles critiques inline pour éviter le FOUC -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      overflow-x: hidden;
+    }
+    
+    #root {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Écran de chargement */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: white;
+    }
+    
+    .loading-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .loading-text {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    
+    .loading-subtitle {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">
+      <h2>JavaScript requis</h2>
+      <p>Cette application nécessite JavaScript pour fonctionner. Veuillez l'activer dans votre navigateur.</p>
+    </div>
+  </noscript>
+  
+  <!-- Écran de chargement -->
+  <div id="loading-screen" class="loading-screen">
+    <img src="/icon.png" alt="Af-MeD Logo" class="loading-logo" />
+    <div class="loading-text">Af-MeD Prières</div>
+    <div class="loading-subtitle">Chargement...</div>
+  </div>
+  
+  <!-- Conteneur principal de l'application -->
+  <div id="root"></div>
+  
+  <!-- Script pour masquer l'écran de chargement -->
+  <script>
+    // Masquer l'écran de chargement une fois que l'app est chargée
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          loadingScreen.style.transition = 'opacity 0.5s ease-out';
+          setTimeout(function() {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }
+      }, 1000);
+    });
+  </script>
+  
+  <!-- Enregistrement du Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(registration) {
+            console.log('Service Worker enregistré avec succès:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('Échec de l\'enregistrement du Service Worker:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -28,6 +28,10 @@ import PrayerScreen from './screens/PrayerScreen';
 import { theme } from './theme';
 import { app } from './config/firebaseConfig';
 
+// Import PWA components
+import PWAInstallPrompt from './components/PWAInstallPrompt';
+import PWAStatus from './components/PWAStatus';
+
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const { width } = Dimensions.get('window');
@@ -346,6 +350,8 @@ export default function App() {
         ) : (
           <MainApp />
         )}
+        <PWAStatus />
+        <PWAInstallPrompt />
       </View>
     </NavigationContainer>
   );
