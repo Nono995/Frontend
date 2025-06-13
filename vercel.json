@@ -1,4 +1,3 @@
-// Vercel configuration for a React/Expo web PWA
 {
   "version": 2,
   "builds": [
