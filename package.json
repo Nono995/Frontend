@@ -9,7 +9,10 @@
     "web": "expo start --web",
     "setup-pwa": "node scripts/setup-pwa.js",
     "build": "expo export --platform web --output-dir web-build && npm run setup-pwa",
-    "vercel-build": "expo export --platform web --output-dir web-build && npm run setup-pwa"
+    "vercel-build": "expo export --platform web --output-dir web-build && npm run setup-pwa",
+    "deploy": "node scripts/deploy.js",
+    "deploy-preview": "npm run deploy && vercel deploy",
+    "deploy-prod": "npm run deploy && vercel deploy --prod"
   },
   "dependencies": {
     "@expo-google-fonts/playfair-display": "^0.4.0",
