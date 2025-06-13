@@ -36,7 +36,6 @@
       "backgroundColor": "#ffffff",
       "preferRelatedApplications": false,
       "bundler": "metro",
-      "template": "./web/index.html",
       "build": {
         "babel": {
           "include": ["@expo/vector-icons"]
