@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arrière-plan avec couleur de thème -->
+  <rect width="72" height="72" fill="#1a237e"/>
+  
+  <!-- Zone de sécurité (80% du centre) -->
+  <rect x="7.2" y="7.2" width="57.6" height="57.6" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Logo simplifié Af-MeD -->
+  <g transform="translate(36, 36)">
+    <!-- Croix stylisée -->
+    <rect x="-10.799999999999999" y="-21.599999999999998" width="21.599999999999998" height="7.2" fill="#ffffff" rx="1.44"/>
+    <rect x="-3.6" y="-21.599999999999998" width="7.2" height="28.8" fill="#ffffff" rx="1.44"/>
+    
+    <!-- Texte Af-MeD -->
+    <text x="0" y="18" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8.64" font-weight="bold">Af-MeD</text>
+  </g>
+  
+  <!-- Indicateur de taille -->
+  <text x="3.6" y="68.39999999999999" fill="#ffffff" font-family="Arial, sans-serif" font-size="5.76" opacity="0.7">72px</text>
+</svg>

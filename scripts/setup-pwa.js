@@ -24,11 +24,23 @@ const filesToCopy = [
   { src: 'public/manifest.json', dest: 'web-build/manifest.json' },
   { src: 'public/sw.js', dest: 'web-build/sw.js' },
 
-  // Icônes
+  // Icônes PWA optimisées
   { src: 'assets/favicon.png', dest: 'web-build/favicon.png' },
+  { src: 'assets/icon-72.png', dest: 'web-build/icon-72.png' },
+  { src: 'assets/icon-96.png', dest: 'web-build/icon-96.png' },
+  { src: 'assets/icon-128.png', dest: 'web-build/icon-128.png' },
+  { src: 'assets/icon-144.png', dest: 'web-build/icon-144.png' },
+  { src: 'assets/icon-152.png', dest: 'web-build/icon-152.png' },
+  { src: 'assets/icon-192.png', dest: 'web-build/icon-192.png' },
+  { src: 'assets/icon-384.png', dest: 'web-build/icon-384.png' },
+  { src: 'assets/icon-512.png', dest: 'web-build/icon-512.png' },
+
+  // Images supplémentaires
+  { src: 'assets/church-header.png', dest: 'web-build/church-header.png' },
+
+  // Compatibilité avec les anciens noms (fallback)
   { src: 'assets/icon.png', dest: 'web-build/icon.png' },
-  { src: 'assets/adaptive-icon.png', dest: 'web-build/adaptive-icon.png' },
-  { src: 'assets/church-header.png', dest: 'web-build/church-header.png' }
+  { src: 'assets/adaptive-icon.png', dest: 'web-build/adaptive-icon.png' }
 ];
 
 // Fonction pour injecter les métadonnées PWA dans l'index.html
