@@ -8,8 +8,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "setup-pwa": "node scripts/setup-pwa.js",
-    "build": "expo export --platform web --output-dir web-build && npm run setup-pwa",
-    "vercel-build": "expo export --platform web --output-dir web-build && npm run setup-pwa",
+    "validate-pwa": "node scripts/validate-pwa.js",
+    "test-pwa-urls": "node scripts/test-pwa-urls.js",
+    "build": "expo export --platform web --output-dir web-build && npm run setup-pwa && npm run validate-pwa",
+    "vercel-build": "expo export --platform web --output-dir web-build && npm run setup-pwa && npm run validate-pwa",
     "deploy": "node scripts/deploy.js",
     "deploy-preview": "npm run deploy && vercel deploy",
     "deploy-prod": "npm run deploy && vercel deploy --prod"
